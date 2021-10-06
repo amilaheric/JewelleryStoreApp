@@ -1,0 +1,15 @@
+<h1>Products</h1>
+<hr>
+
+<div class="nova" *ngFor="let product of products">
+  <h4> {{ product.name }}</h4>
+  <span class="pull-right">
+    <img src="{{product.image}}"
+         alt="{{product.name}}"
+         class="img-responsive"
+         style="max-width: 500px; ">
+  </span>
+  <p> Price:{{ product.price | currency:'EUR' }}</p>
+  <a class="btn btn-outline-dark " [routerLink]="['/products', product.productId]">See details</a>
+
+</div>
